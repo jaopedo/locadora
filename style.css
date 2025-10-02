@@ -15,6 +15,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header .logo h1 {
@@ -24,10 +25,11 @@ header .logo h1 {
 
 .main-nav ul {
     list-style: none;
-    margin: 0;
+    margin: 10px 0 0;
     padding: 0;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .main-nav a {
@@ -44,6 +46,7 @@ header .logo h1 {
 #main-container {
     display: flex;
     min-height: 100vh;
+    flex-wrap: wrap;
 }
 
 /* Sidebar */
@@ -106,6 +109,8 @@ header .logo h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .rank-number {
@@ -118,6 +123,7 @@ header .logo h1 {
 
 .movie-poster {
     width: 200px;
+    max-width: 100%;
     display: block;
     margin: 15px 0;
     border-radius: 8px;
@@ -171,4 +177,59 @@ header .logo h1 {
     background: #2c3e50;
     color: white;
     margin-top: 20px;
+}
+
+/* ===================================== */
+/* RESPONSIVIDADE */
+/* ===================================== */
+
+/* Tablets e celulares */
+@media (max-width: 900px) {
+    #main-container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+    }
+
+    #main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .movie-list-nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+    }
+
+    .ranking-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .rank-number {
+        font-size: 1rem;
+    }
+
+    .movie-poster {
+        width: 100%;
+    }
+
+    .action-btn {
+        flex: 1;
+        text-align: center;
+    }
 }
